@@ -1,7 +1,7 @@
 package com.swith.backend.domain.recruitmentPost.domain;
 
 import com.swith.backend.domain.recruitmentPost.types.RecruitmentPostCategory;
-import com.swith.backend.global.baseCode.BaseIdEntity;
+import com.swith.backend.global.entity.BaseIdEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

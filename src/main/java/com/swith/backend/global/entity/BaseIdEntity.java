@@ -1,4 +1,4 @@
-package com.swith.backend.global.baseCode;
+package com.swith.backend.global.entity;
 
 import lombok.Getter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;

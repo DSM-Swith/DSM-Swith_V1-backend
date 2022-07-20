@@ -1,7 +1,7 @@
 package com.swith.backend.domain.user.domain;
 
 import com.swith.backend.domain.user.types.UserRank;
-import com.swith.backend.global.baseCode.BaseIdEntity;
+import com.swith.backend.global.entity.BaseIdEntity;
 
 import javax.persistence.Column;
 

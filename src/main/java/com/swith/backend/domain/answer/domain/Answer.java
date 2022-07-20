@@ -1,6 +1,6 @@
 package com.swith.backend.domain.answer.domain;
 
-import com.swith.backend.global.baseCode.BaseIdEntity;
+import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.Getter;
 
 import javax.persistence.Column;

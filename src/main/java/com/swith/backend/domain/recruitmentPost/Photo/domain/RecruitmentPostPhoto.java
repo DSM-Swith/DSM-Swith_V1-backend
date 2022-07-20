@@ -1,6 +1,6 @@
 package com.swith.backend.domain.recruitmentPost.Photo.domain;
 
-import com.swith.backend.global.baseCode.BaseIdEntity;
+import com.swith.backend.global.entity.BaseIdEntity;
 
 import javax.persistence.Entity;
 
