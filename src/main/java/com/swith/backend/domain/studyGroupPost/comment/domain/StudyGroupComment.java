@@ -17,8 +17,4 @@ public class StudyGroupComment extends BaseIdEntity {
     @Column(nullable = false, length = 200)
     private String content;
 
-    @Builder
-    public StudyGroupComment(String content) {
-        this.content = content;
-    }
 }
