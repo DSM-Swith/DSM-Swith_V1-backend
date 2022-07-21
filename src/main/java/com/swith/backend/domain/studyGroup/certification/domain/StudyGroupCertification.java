@@ -18,8 +18,4 @@ public class StudyGroupCertification extends BaseTimeEntity {
     @Column(nullable = false)
     private String path;
 
-    @Builder
-    public StudyGroupCertification(String path, Date certificationDate) {
-        this.path = path;
-    }
 }
