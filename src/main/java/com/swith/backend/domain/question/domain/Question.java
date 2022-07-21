@@ -15,7 +15,7 @@ import java.util.Date;
 @Entity
 public class Question extends BaseTimeEntity {
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String question;
 
     @Builder
