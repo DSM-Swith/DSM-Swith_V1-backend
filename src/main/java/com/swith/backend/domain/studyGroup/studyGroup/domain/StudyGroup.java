@@ -16,8 +16,7 @@ import java.time.LocalDate;
 @Entity
 public class StudyGroup extends BaseIdEntity {
 
-    @NotNull
-    @Column(length = 20)
+    @Column(nullable = false, length = 20)
     private String groupName;
 
     @Column(nullable = false, length = 500)
