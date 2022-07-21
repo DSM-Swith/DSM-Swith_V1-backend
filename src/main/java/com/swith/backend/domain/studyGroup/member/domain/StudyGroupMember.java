@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class StudyGroupMember extends BaseIdEntity {
-    
+
     @Column(nullable = false, columnDefinition = "tinyint default 0")
     private Integer warning;
 
