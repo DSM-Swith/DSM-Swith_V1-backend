@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -16,10 +18,11 @@ import javax.persistence.Entity;
 public class ApplyPost extends BaseIdEntity {
 
     @Column(nullable = false)
-    private Enum<ApplyPostState> state;
+    @Enumerated(EnumType.STRING)
+    private ApplyPostState state;
 
     @Builder
-    public ApplyPost(Enum<ApplyPostState> state) {
+    public ApplyPost(ApplyPostState state) {
         this.state = state;
     }
 }

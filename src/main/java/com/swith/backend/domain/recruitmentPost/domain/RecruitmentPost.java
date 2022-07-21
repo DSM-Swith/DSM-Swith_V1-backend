@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.util.Date;
 
 @Getter
@@ -31,10 +33,11 @@ public class RecruitmentPost extends BaseIdEntity {
     @Column(nullable = false)
     private Date endDate;
 
-    private Enum<RecruitmentPostCategory> category;
+    @Enumerated(EnumType.STRING)
+    private RecruitmentPostCategory category;
 
     @Builder
-    public RecruitmentPost(String title, String content, Integer RecruitmentMember, Date startDate, Date endDate, Enum<RecruitmentPostCategory> category) {
+    public RecruitmentPost(String title, String content, Integer RecruitmentMember, Date startDate, Date endDate, RecruitmentPostCategory category) {
         this.title = title;
         this.content = content;
         this.RecruitmentMember = RecruitmentMember;

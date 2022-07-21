@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -19,10 +21,11 @@ public class StudyGroupMember extends BaseIdEntity {
     private Integer warning;
 
     @Column(nullable = false)
-    private Enum<StudyGroupMemberRole> role;
+    @Enumerated(EnumType.STRING)
+    private StudyGroupMemberRole role;
 
     @Builder
-    public StudyGroupMember(Integer warning, Enum<StudyGroupMemberRole> role) {
+    public StudyGroupMember(Integer warning, StudyGroupMemberRole role) {
         this.warning = warning;
         this.role = role;
     }
