@@ -2,7 +2,6 @@ package com.swith.backend.domain.studyGroupPost.comment.domain;
 
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

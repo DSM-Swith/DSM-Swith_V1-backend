@@ -3,7 +3,6 @@ package com.swith.backend.domain.post.applyPost.domain;
 import com.swith.backend.domain.post.applyPost.domain.types.State;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
