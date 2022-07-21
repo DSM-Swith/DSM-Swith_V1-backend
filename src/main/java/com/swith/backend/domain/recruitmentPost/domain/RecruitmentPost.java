@@ -2,11 +2,17 @@ package com.swith.backend.domain.recruitmentPost.domain;
 
 import com.swith.backend.domain.recruitmentPost.types.RecruitmentPostCategory;
 import com.swith.backend.global.entity.BaseIdEntity;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.Date;
 
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class RecruitmentPost extends BaseIdEntity {
 
@@ -26,4 +32,14 @@ public class RecruitmentPost extends BaseIdEntity {
     private Date endDate;
 
     private Enum<RecruitmentPostCategory> category;
+
+    @Builder
+    public RecruitmentPost(String title, String content, Integer RecruitmentMember, Date startDate, Date endDate, Enum<RecruitmentPostCategory> category) {
+        this.title = title;
+        this.content = content;
+        this.RecruitmentMember = RecruitmentMember;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.category = category;
+    }
 }
