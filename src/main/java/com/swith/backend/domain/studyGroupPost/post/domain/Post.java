@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class StudyGroupPost extends BaseIdEntity {
+public class Post extends BaseIdEntity {
 
     @Column(nullable = false, length = 100)
     private String title;
@@ -21,7 +21,7 @@ public class StudyGroupPost extends BaseIdEntity {
     private String content;
 
     @Builder
-    public StudyGroupPost(String title, String content) {
+    public Post(String title, String content) {
         this.title = title;
         this.content = content;
     }

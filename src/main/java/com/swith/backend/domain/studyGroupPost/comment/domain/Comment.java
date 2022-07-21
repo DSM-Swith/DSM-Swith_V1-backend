@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class StudyGroupComment extends BaseIdEntity {
+public class Comment extends BaseIdEntity {
 
     @Column(nullable = false, length = 200)
     private String content;
