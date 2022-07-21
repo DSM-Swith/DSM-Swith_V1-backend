@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -21,13 +21,13 @@ public class StudyGroup extends BaseIdEntity {
     @Column(nullable = false, length = 500)
     private String description;
 
-    private Date endDate;
+    private LocalDate endDate;
 
     @Column(nullable = false, columnDefinition = "tinyint")
     private Integer warningCount;
 
     @Builder
-    public StudyGroup(String groupName, String description, Date endDate, Integer warningCount) {
+    public StudyGroup(String groupName, String description, LocalDate endDate, Integer warningCount) {
         this.groupName = groupName;
         this.description = description;
         this.endDate = endDate;

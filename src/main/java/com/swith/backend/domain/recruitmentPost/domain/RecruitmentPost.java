@@ -11,7 +11,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -28,16 +28,16 @@ public class RecruitmentPost extends BaseIdEntity {
     private Integer RecruitmentMember;
 
     @Column(nullable = false)
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(nullable = false)
-    private Date endDate;
+    private LocalDate endDate;
 
     @Enumerated(EnumType.STRING)
     private RecruitmentPostCategory category;
 
     @Builder
-    public RecruitmentPost(String title, String content, Integer RecruitmentMember, Date startDate, Date endDate, RecruitmentPostCategory category) {
+    public RecruitmentPost(String title, String content, Integer RecruitmentMember, LocalDate startDate, LocalDate endDate, RecruitmentPostCategory category) {
         this.title = title;
         this.content = content;
         this.RecruitmentMember = RecruitmentMember;

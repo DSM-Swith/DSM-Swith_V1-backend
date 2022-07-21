@@ -1,6 +1,6 @@
 package com.swith.backend.domain.studyGroup.certification.domain;
 
-import com.swith.backend.global.entity.BaseIdEntity;
+import com.swith.backend.global.entity.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,17 +13,13 @@ import java.util.Date;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class StudyGroupCertification extends BaseIdEntity {
+public class StudyGroupCertification extends BaseTimeEntity {
 
     @Column(nullable = false)
     private String path;
 
-    @Column(nullable = false)
-    private Date certificationDate;
-
     @Builder
     public StudyGroupCertification(String path, Date certificationDate) {
         this.path = path;
-        this.certificationDate = certificationDate;
     }
 }
