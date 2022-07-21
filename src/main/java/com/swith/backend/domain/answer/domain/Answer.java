@@ -14,7 +14,7 @@ import javax.persistence.Entity;
 @Entity
 public class Answer extends BaseIdEntity {
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 500)
     private String answer;
 
     @Builder
