@@ -1,6 +1,6 @@
 package com.swith.backend.domain.post.applyPost.domain;
 
-import com.swith.backend.domain.post.applyPost.domain.types.ApplyPostState;
+import com.swith.backend.domain.post.applyPost.domain.types.State;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -19,10 +19,6 @@ public class ApplyPost extends BaseIdEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private ApplyPostState state;
+    private State state;
 
-    @Builder
-    public ApplyPost(ApplyPostState state) {
-        this.state = state;
-    }
 }
