@@ -2,15 +2,24 @@ package com.swith.backend.domain.user.domain;
 
 import com.swith.backend.domain.user.domain.types.UserRank;
 import com.swith.backend.global.entity.BaseIdEntity;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
 
+@NoArgsConstructor
+@Getter
+@Entity
 public class User extends BaseIdEntity {
 
     @Column(nullable = false, length = 20)
     private String name;
 
-    @Column(length = 10)
+    @Column(nullable = false, length = 10)
     private String accountId;
 
     @Column(nullable = false, length = 60)
@@ -20,9 +29,11 @@ public class User extends BaseIdEntity {
     private String introduce;
 
     @Column(nullable = false)
-    private Enum<UserRank> rank;
+    @Enumerated(EnumType.STRING)
+    private UserRank rank;
 
-    @Column(columnDefinition = "tinyint")
+    @NotNull
+    @Column(columnDefinition = "tinyint default 0")
     private Integer plusPoint;
 
     @Column(nullable = false, length = 35)
@@ -33,4 +44,16 @@ public class User extends BaseIdEntity {
 
     @Column(nullable = false)
     private Boolean isApply;
+
+    public User(String name, String accountId, String password, String introduce, UserRank rank, Integer plusPoint, String email, String path, Boolean isApply) {
+        this.name = name;
+        this.accountId = accountId;
+        this.password = password;
+        this.introduce = introduce;
+        this.rank = rank;
+        this.plusPoint = plusPoint;
+        this.email = email;
+        this.path = path;
+        this.isApply = isApply;
+    }
 }

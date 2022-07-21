@@ -11,13 +11,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class StudyGroupMember extends BaseIdEntity {
 
-    @Column(columnDefinition = "tinyint")
+    @NotNull
+    @Column(columnDefinition = "tinyint default 0")
     private Integer warning;
 
     @Column(nullable = false)
