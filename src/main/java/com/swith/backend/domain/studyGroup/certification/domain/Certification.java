@@ -13,7 +13,7 @@ import java.util.Date;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class StudyGroupCertification extends BaseTimeEntity {
+public class Certification extends BaseTimeEntity {
 
     @Column(nullable = false)
     private String path;
