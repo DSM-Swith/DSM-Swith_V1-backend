@@ -2,6 +2,7 @@ package com.swith.backend.domain.user.domain;
 
 import com.swith.backend.domain.user.domain.types.UserRank;
 import com.swith.backend.global.entity.BaseIdEntity;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -45,6 +46,7 @@ public class User extends BaseIdEntity {
     @Column(nullable = false)
     private Boolean isApply;
 
+    @Builder
     public User(String name, String accountId, String password, String introduce, UserRank rank, Integer plusPoint, String email, String path, Boolean isApply) {
         this.name = name;
         this.accountId = accountId;
