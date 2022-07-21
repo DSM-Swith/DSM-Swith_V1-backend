@@ -1,6 +1,6 @@
 package com.swith.backend.domain.user.domain;
 
-import com.swith.backend.domain.user.domain.types.UserRank;
+import com.swith.backend.domain.user.domain.types.Rank;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -32,7 +32,7 @@ public class User extends BaseIdEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private UserRank rank;
+    private Rank rank;
 
     @NotNull
     @Column(columnDefinition = "tinyint default 0")
@@ -48,7 +48,7 @@ public class User extends BaseIdEntity {
     private Boolean isApply;
 
     @Builder
-    public User(String name, String accountId, String password, String introduce, UserRank rank, Integer plusPoint, String email, String path, Boolean isApply) {
+    public User(String name, String accountId, String password, String introduce, Rank rank, Integer plusPoint, String email, String path, Boolean isApply) {
         this.name = name;
         this.accountId = accountId;
         this.password = password;
