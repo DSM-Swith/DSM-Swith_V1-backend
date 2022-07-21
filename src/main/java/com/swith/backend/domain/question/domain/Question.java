@@ -2,7 +2,6 @@ package com.swith.backend.domain.question.domain;
 
 import com.swith.backend.global.entity.BaseTimeEntity;
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -18,8 +17,4 @@ public class Question extends BaseTimeEntity {
     @Column(nullable = false, length = 100)
     private String question;
 
-    @Builder
-    public Question(String question, Date createDate) {
-        this.question = question;
-    }
 }
