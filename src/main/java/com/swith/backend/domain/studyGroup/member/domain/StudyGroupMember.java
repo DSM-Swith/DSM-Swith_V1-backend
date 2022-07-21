@@ -1,6 +1,6 @@
 package com.swith.backend.domain.studyGroup.member.domain;
 
-import com.swith.backend.domain.studyGroup.member.types.StudyGroupMemberRole;
+import com.swith.backend.domain.studyGroup.member.domain.types.StudyGroupMemberRole;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;

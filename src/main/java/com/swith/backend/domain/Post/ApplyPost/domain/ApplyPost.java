@@ -1,6 +1,6 @@
 package com.swith.backend.domain.Post.ApplyPost.domain;
 
-import com.swith.backend.domain.Post.ApplyPost.types.ApplyPostState;
+import com.swith.backend.domain.Post.ApplyPost.domain.types.ApplyPostState;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
