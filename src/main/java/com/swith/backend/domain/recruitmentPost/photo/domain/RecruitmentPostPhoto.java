@@ -1,4 +1,4 @@
-package com.swith.backend.domain.recruitmentPost.Photo.domain;
+package com.swith.backend.domain.recruitmentPost.photo.domain;
 
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;

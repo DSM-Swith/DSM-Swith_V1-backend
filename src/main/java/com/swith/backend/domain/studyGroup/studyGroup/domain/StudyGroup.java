@@ -1,4 +1,4 @@
-package com.swith.backend.domain.studyGroup.domain;
+package com.swith.backend.domain.studyGroup.studyGroup.domain;
 
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
