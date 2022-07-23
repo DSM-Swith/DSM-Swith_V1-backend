@@ -1,6 +1,7 @@
 package com.swith.backend.domain.studyGroup.studyGroup.domain;
 
 import com.swith.backend.domain.studyGroup.certification.domain.Certification;
+import com.swith.backend.domain.studyGroupPost.post.domain.Post;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -31,6 +32,9 @@ public class StudyGroup extends BaseIdEntity {
 
     @OneToMany(mappedBy = "studyGroup")
     private List<Certification> certification;
+
+    @OneToMany(mappedBy = "studyGroupPost")
+    private List<Post> post;
 
     @Builder
     public StudyGroup(String groupName, String description, LocalDate endDate, Integer warningCount) {
