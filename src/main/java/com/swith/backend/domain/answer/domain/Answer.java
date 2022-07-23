@@ -22,10 +22,10 @@ public class Answer extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private User userAnswer;
 
     @ManyToOne
     @JoinColumn(name = "question_id")
-    private Question question;
+    private Question questionAnswer;
 
 }

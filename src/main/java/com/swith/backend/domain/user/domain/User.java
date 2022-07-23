@@ -51,10 +51,10 @@ public class User extends BaseIdEntity {
     @Column(nullable = false)
     private Boolean isApply;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userAnswer")
     private List<Answer> answers;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userRecruitmentPost")
     private List<RecruitmentPost> recruitmentPost;
 
     @Builder

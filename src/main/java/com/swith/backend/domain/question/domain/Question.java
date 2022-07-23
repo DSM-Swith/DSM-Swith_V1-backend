@@ -22,11 +22,11 @@ public class Question extends BaseTimeEntity {
     @Column(nullable = false, length = 100)
     private String question;
 
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "questionAnswer")
     private List<Answer> answer;
 
     @ManyToOne
     @JoinColumn(name = "recruitment_post_id")
-    private RecruitmentPost recruitmentPost;
+    private RecruitmentPost recruitmentPostQuestion;
 
 }

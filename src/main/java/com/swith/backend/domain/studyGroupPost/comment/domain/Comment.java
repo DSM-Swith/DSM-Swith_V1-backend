@@ -21,6 +21,6 @@ public class Comment extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "study_group_post_id")
-    private Post post;
+    private Post postComment;
 
 }

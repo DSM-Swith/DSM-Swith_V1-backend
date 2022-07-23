@@ -42,15 +42,15 @@ public class RecruitmentPost extends BaseIdEntity {
     @Enumerated(EnumType.STRING)
     private RecruitmentPostCategory category;
 
-    @OneToMany(mappedBy = "recruitmentPost")
+    @OneToMany(mappedBy = "recruitmentPostQuestion")
     private List<Question> question;
 
-    @OneToMany(mappedBy = "recruitmentPost")
+    @OneToMany(mappedBy = "recruitmentPostRecruitmentPostPhoto")
     private List<RecruitmentPostPhoto> recruitmentPostPhoto;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private User userRecruitmentPost;
 
     @Builder
     public RecruitmentPost(String title, String content, Integer RecruitmentMember, LocalDate startDate, LocalDate endDate, RecruitmentPostCategory category) {

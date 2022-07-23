@@ -26,7 +26,7 @@ public class Post extends BaseIdEntity {
     @Column(nullable = false, length = 2000)
     private String content;
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "postComment")
     private List<Comment> comment;
 
     @ManyToOne

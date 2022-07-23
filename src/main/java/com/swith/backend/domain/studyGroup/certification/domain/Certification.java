@@ -21,5 +21,5 @@ public class Certification extends BaseTimeEntity {
 
     @ManyToOne
     @JoinColumn(name = "study_group_id")
-    private StudyGroup studyGroup;
+    private StudyGroup studyGroupCertification;
 }
