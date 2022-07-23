@@ -1,5 +1,7 @@
 package com.swith.backend.domain.user.domain;
 
+import com.swith.backend.domain.answer.domain.Answer;
+import com.swith.backend.domain.recruitmentPost.domain.RecruitmentPost;
 import com.swith.backend.domain.user.domain.types.Rank;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
@@ -11,7 +13,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -46,6 +50,12 @@ public class User extends BaseIdEntity {
 
     @Column(nullable = false)
     private Boolean isApply;
+
+    @OneToMany(mappedBy = "user")
+    private List<Answer> answers;
+
+    @OneToMany(mappedBy = "user")
+    private List<RecruitmentPost> recruitmentPost;
 
     @Builder
     public User(String name, String accountId, String password, String introduce, Rank rank, Integer plusPoint, String email, String path, Boolean isApply) {
