@@ -1,6 +1,8 @@
 package com.swith.backend.domain.recruitmentPost.domain;
 
+import com.swith.backend.domain.question.domain.Question;
 import com.swith.backend.domain.recruitmentPost.domain.types.RecruitmentPostCategory;
+import com.swith.backend.domain.user.domain.User;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -11,7 +13,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -35,6 +41,16 @@ public class RecruitmentPost extends BaseIdEntity {
 
     @Enumerated(EnumType.STRING)
     private RecruitmentPostCategory category;
+
+    @OneToMany(mappedBy = "recruitmentPost")
+    private List<Question> question;
+
+    @OneToMany(mappedBy = "recruitmentPost")
+    private List<RecruitmentPostPhoto> recruitmentPostPhoto;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Builder
     public RecruitmentPost(String title, String content, Integer RecruitmentMember, LocalDate startDate, LocalDate endDate, RecruitmentPostCategory category) {

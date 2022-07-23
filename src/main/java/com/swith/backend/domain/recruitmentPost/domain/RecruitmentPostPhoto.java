@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -14,6 +16,10 @@ import javax.persistence.Entity;
 public class RecruitmentPostPhoto extends BaseIdEntity {
 
     private String path;
+
+    @ManyToOne
+    @JoinColumn(name = "recruitment_post_id")
+    private RecruitmentPost recruitmentPost;
 
     @Builder
     public RecruitmentPostPhoto(String path) {
