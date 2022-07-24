@@ -67,9 +67,6 @@ public class User extends BaseIdEntity {
     @OneToOne(mappedBy = "userLikePost")
     private LikePost likePost;
 
-    @OneToOne(mappedBy = "userApplyPost")
-    private ApplyPost applyPost;
-
     @Builder
     public User(String name, String accountId, String password, String introduce, Rank rank, Integer plusPoint, String email, String path, Boolean isApply) {
         this.name = name;

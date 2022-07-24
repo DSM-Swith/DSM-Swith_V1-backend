@@ -54,9 +54,6 @@ public class RecruitmentPost extends BaseIdEntity {
     @OneToOne(mappedBy = "recruitmentPostLikePost")
     private LikePost likePost;
 
-    @OneToOne(mappedBy = "recruitmentPostApplyPost")
-    private ApplyPost applyPost;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User userRecruitmentPost;
