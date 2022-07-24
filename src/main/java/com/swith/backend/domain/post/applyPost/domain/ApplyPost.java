@@ -13,7 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -24,11 +25,11 @@ public class ApplyPost extends BaseIdEntity {
     @Enumerated(EnumType.STRING)
     private State state;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User userApplyPost;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "recruitment_post_id")
     private RecruitmentPost recruitmentPostApplyPost;
 

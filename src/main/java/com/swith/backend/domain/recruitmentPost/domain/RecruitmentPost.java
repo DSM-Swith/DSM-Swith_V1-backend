@@ -18,7 +18,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -51,12 +50,16 @@ public class RecruitmentPost extends BaseIdEntity {
     @OneToMany(mappedBy = "recruitmentPostRecruitmentPostPhoto")
     private List<RecruitmentPostPhoto> recruitmentPostPhoto;
 
-    @OneToOne(mappedBy = "recruitmentPostLikePost")
-    private LikePost likePost;
+    @OneToMany(mappedBy = "recruitmentPostLikePost")
+    private List<LikePost> likePost;
+
+    @OneToMany(mappedBy = "recruitmentPostApplyPost")
+    private List<ApplyPost> applyPost;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User userRecruitmentPost;
+
 
     @Builder
     public RecruitmentPost(String title, String content, Integer RecruitmentMember, LocalDate startDate, LocalDate endDate, RecruitmentPostCategory category) {

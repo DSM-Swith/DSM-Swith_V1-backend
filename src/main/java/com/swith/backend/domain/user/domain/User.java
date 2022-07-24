@@ -17,7 +17,6 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -64,8 +63,8 @@ public class User extends BaseIdEntity {
     @OneToMany(mappedBy = "userMember")
     private List<Member> member;
 
-    @OneToOne(mappedBy = "userLikePost")
-    private LikePost likePost;
+    @OneToMany(mappedBy = "userLikePost")
+    private List<LikePost> likePost;
 
     @Builder
     public User(String name, String accountId, String password, String introduce, Rank rank, Integer plusPoint, String email, String path, Boolean isApply) {
