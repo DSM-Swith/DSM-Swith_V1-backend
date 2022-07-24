@@ -2,6 +2,7 @@ package com.swith.backend.domain.user.domain;
 
 import com.swith.backend.domain.answer.domain.Answer;
 import com.swith.backend.domain.recruitmentPost.domain.RecruitmentPost;
+import com.swith.backend.domain.studyGroup.member.domain.Member;
 import com.swith.backend.domain.user.domain.types.Rank;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
@@ -56,6 +57,9 @@ public class User extends BaseIdEntity {
 
     @OneToMany(mappedBy = "userRecruitmentPost")
     private List<RecruitmentPost> recruitmentPost;
+
+    @OneToMany(mappedBy = "userMember")
+    private List<Member> member;
 
     @Builder
     public User(String name, String accountId, String password, String introduce, Rank rank, Integer plusPoint, String email, String path, Boolean isApply) {
