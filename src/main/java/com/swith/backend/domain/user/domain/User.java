@@ -1,6 +1,7 @@
 package com.swith.backend.domain.user.domain;
 
 import com.swith.backend.domain.answer.domain.Answer;
+import com.swith.backend.domain.post.applyPost.domain.ApplyPost;
 import com.swith.backend.domain.post.likePost.domain.LikePost;
 import com.swith.backend.domain.recruitmentPost.domain.RecruitmentPost;
 import com.swith.backend.domain.studyGroup.member.domain.Member;
@@ -65,6 +66,9 @@ public class User extends BaseIdEntity {
 
     @OneToOne(mappedBy = "userLikePost")
     private LikePost likePost;
+
+    @OneToOne(mappedBy = "userApplyPost")
+    private ApplyPost applyPost;
 
     @Builder
     public User(String name, String accountId, String password, String introduce, Rank rank, Integer plusPoint, String email, String path, Boolean isApply) {

@@ -1,6 +1,8 @@
 package com.swith.backend.domain.post.applyPost.domain;
 
 import com.swith.backend.domain.post.applyPost.domain.types.State;
+import com.swith.backend.domain.recruitmentPost.domain.RecruitmentPost;
+import com.swith.backend.domain.user.domain.User;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -10,6 +12,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -19,5 +23,13 @@ public class ApplyPost extends BaseIdEntity {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private State state;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User userApplyPost;
+
+    @OneToOne
+    @JoinColumn(name = "recruitment_post_id")
+    private RecruitmentPost recruitmentPostApplyPost;
 
 }

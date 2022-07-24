@@ -1,5 +1,6 @@
 package com.swith.backend.domain.recruitmentPost.domain;
 
+import com.swith.backend.domain.post.applyPost.domain.ApplyPost;
 import com.swith.backend.domain.post.likePost.domain.LikePost;
 import com.swith.backend.domain.question.domain.Question;
 import com.swith.backend.domain.recruitmentPost.domain.types.RecruitmentPostCategory;
@@ -52,6 +53,9 @@ public class RecruitmentPost extends BaseIdEntity {
 
     @OneToOne(mappedBy = "recruitmentPostLikePost")
     private LikePost likePost;
+
+    @OneToOne(mappedBy = "recruitmentPostApplyPost")
+    private ApplyPost applyPost;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
