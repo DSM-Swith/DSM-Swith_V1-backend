@@ -1,5 +1,6 @@
 package com.swith.backend.domain.recruitmentPost.domain;
 
+import com.swith.backend.domain.post.likePost.domain.LikePost;
 import com.swith.backend.domain.question.domain.Question;
 import com.swith.backend.domain.recruitmentPost.domain.types.RecruitmentPostCategory;
 import com.swith.backend.domain.user.domain.User;
@@ -16,6 +17,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -47,6 +49,9 @@ public class RecruitmentPost extends BaseIdEntity {
 
     @OneToMany(mappedBy = "recruitmentPostRecruitmentPostPhoto")
     private List<RecruitmentPostPhoto> recruitmentPostPhoto;
+
+    @OneToOne(mappedBy = "recruitmentPostLikePost")
+    private LikePost likePost;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
