@@ -22,7 +22,7 @@ public class Question extends BaseTimeEntity {
     @Column(nullable = false, length = 100)
     private String question;
 
-    @OneToMany(mappedBy = "questionAnswer")
+    @OneToMany(mappedBy = "question")
     private List<Answer> answer;
 
     @ManyToOne

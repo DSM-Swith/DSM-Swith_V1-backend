@@ -26,6 +26,6 @@ public class Answer extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "question_id")
-    private Question questionAnswer;
+    private Question question;
 
 }
