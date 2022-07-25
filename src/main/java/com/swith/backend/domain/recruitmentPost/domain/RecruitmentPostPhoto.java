@@ -19,7 +19,7 @@ public class RecruitmentPostPhoto extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "recruitment_post_id")
-    private RecruitmentPost recruitmentPostRecruitmentPostPhoto;
+    private RecruitmentPost recruitmentPostPhoto;
 
     @Builder
     public RecruitmentPostPhoto(String path) {

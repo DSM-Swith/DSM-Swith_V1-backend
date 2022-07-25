@@ -47,8 +47,8 @@ public class RecruitmentPost extends BaseIdEntity {
     @OneToMany(mappedBy = "recruitmentPost")
     private List<Question> question;
 
-    @OneToMany(mappedBy = "recruitmentPostRecruitmentPostPhoto")
-    private List<RecruitmentPostPhoto> recruitmentPostPhoto;
+    @OneToMany(mappedBy = "recruitmentPostPhoto")
+    private List<Photo> Photo;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
