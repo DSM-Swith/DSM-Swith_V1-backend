@@ -40,8 +40,7 @@ public class User extends BaseIdEntity {
     @Enumerated(EnumType.STRING)
     private Rank rank;
 
-    @NotNull
-    @Column(columnDefinition = "tinyint default 0")
+    @Column(nullable = false, columnDefinition = "tinyint default 0")
     private Integer plusPoint;
 
     @Column(nullable = false, length = 35)
