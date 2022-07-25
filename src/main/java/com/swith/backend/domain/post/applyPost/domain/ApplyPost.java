@@ -5,6 +5,7 @@ import com.swith.backend.domain.recruitmentPost.domain.RecruitmentPost;
 import com.swith.backend.domain.user.domain.User;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -31,5 +32,12 @@ public class ApplyPost extends BaseIdEntity {
     @ManyToOne
     @JoinColumn(name = "recruitment_post_id")
     private RecruitmentPost applyPost;
+
+    @Builder
+    public ApplyPost(State state, User user, RecruitmentPost recruitmentPost) {
+        this.state = state;
+        this.applicant = user;
+        this.applyPost = recruitmentPost;
+    }
 
 }

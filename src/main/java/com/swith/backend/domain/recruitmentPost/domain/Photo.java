@@ -22,7 +22,8 @@ public class Photo extends BaseIdEntity {
     private RecruitmentPost recruitmentPostPhoto;
 
     @Builder
-    public Photo(String path) {
+    public Photo(String path, RecruitmentPost recruitmentPost) {
         this.path = path;
+        this.recruitmentPostPhoto = recruitmentPost;
     }
 }

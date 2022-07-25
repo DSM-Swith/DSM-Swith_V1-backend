@@ -52,14 +52,14 @@ public class RecruitmentPost extends BaseIdEntity {
     @JoinColumn(name = "user_id")
     private User writer;
 
-
     @Builder
-    public RecruitmentPost(String title, String content, Integer RecruitmentMember, LocalDate startDate, LocalDate endDate, RecruitmentPostCategory category) {
+    public RecruitmentPost(String title, String content, Integer RecruitmentMember, LocalDate startDate, LocalDate endDate, RecruitmentPostCategory category, User user) {
         this.title = title;
         this.content = content;
         this.RecruitmentMember = RecruitmentMember;
         this.startDate = startDate;
         this.endDate = endDate;
         this.category = category;
+        this.writer = user;
     }
 }

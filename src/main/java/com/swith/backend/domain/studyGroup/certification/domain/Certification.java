@@ -4,6 +4,7 @@ import com.swith.backend.domain.studyGroup.member.domain.Member;
 import com.swith.backend.domain.studyGroup.studyGroup.domain.StudyGroup;
 import com.swith.backend.global.entity.BaseTimeEntity;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -27,5 +28,12 @@ public class Certification extends BaseTimeEntity {
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;
+
+    @Builder
+    public Certification(String path, StudyGroup studyGroup, Member member) {
+        this.path = path;
+        this.studyGroup = studyGroup;
+        this.member = member;
+    }
 
 }

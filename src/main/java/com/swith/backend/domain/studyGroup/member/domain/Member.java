@@ -46,8 +46,10 @@ public class Member extends BaseIdEntity {
     private User member;
 
     @Builder
-    public Member(Integer warning, Role role) {
-        this.warning = warning;
+    public Member(Role role, StudyGroup studyGroup, User user) {
         this.role = role;
+        this.isExit = false;
+        this.participateStudyGroup = studyGroup;
+        this.member = user;
     }
 }

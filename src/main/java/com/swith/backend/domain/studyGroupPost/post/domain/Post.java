@@ -39,8 +39,10 @@ public class Post extends BaseIdEntity {
     private User user;
 
     @Builder
-    public Post(String title, String content) {
+    public Post(String title, String content, StudyGroup studyGroup, User user) {
         this.title = title;
         this.content = content;
+        this.postedStudyGroup = studyGroup;
+        this.user = user;
     }
 }
