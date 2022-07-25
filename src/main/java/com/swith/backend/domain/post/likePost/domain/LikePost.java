@@ -15,11 +15,13 @@ import javax.persistence.ManyToOne;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 public class LikePost extends BaseIdEntity {
+
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User userLikePost;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "recruitment_post_id")
-    private RecruitmentPost recruitmentPostLikePost;
+    private RecruitmentPost LikePost;
+
 }
