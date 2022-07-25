@@ -54,9 +54,6 @@ public class User extends BaseIdEntity {
     @Column(nullable = false)
     private Boolean isApply;
 
-    @OneToMany(mappedBy = "userAnswer")
-    private List<Answer> answers;
-
     @OneToMany(mappedBy = "writer")
     private List<RecruitmentPost> recruitmentPost;
 
