@@ -39,7 +39,7 @@ public class Member extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "study_group_id")
-    private StudyGroup ParticipateStudyGroup;
+    private StudyGroup participateStudyGroup;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
