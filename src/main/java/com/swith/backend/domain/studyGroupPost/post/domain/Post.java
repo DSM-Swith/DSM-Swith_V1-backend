@@ -32,7 +32,7 @@ public class Post extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "study_group_id")
-    private StudyGroup PostedStudyGroup;
+    private StudyGroup postedStudyGroup;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
