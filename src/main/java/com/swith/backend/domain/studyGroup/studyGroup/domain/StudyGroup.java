@@ -31,7 +31,7 @@ public class StudyGroup extends BaseIdEntity {
     @Column(nullable = false, columnDefinition = "tinyint")
     private Integer warningCount;
 
-    @OneToMany(mappedBy = "studyGroupCertification")
+    @OneToMany(mappedBy = "studyGroup")
     private List<Certification> certification;
 
     @OneToMany(mappedBy = "studyGroupPost")
