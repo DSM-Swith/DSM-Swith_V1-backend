@@ -20,7 +20,7 @@ public class Comment extends BaseIdEntity {
     private String content;
 
     @ManyToOne
-    @JoinColumn(name = "study_group_post_id")
-    private Post postComment;
+    @JoinColumn(name = "post_id")
+    private Post post;
 
 }
