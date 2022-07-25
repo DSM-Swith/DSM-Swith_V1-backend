@@ -30,6 +30,9 @@ public class Member extends BaseIdEntity {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @Column(nullable = false)
+    private Boolean isExit;
     
     @OneToMany(mappedBy = "member")
     private List<Certification> certification;
