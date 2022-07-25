@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -34,13 +35,13 @@ public class StudyGroup extends BaseIdEntity {
     @Column(nullable = false)
     private Boolean isAction;
 
-    @OneToMany(mappedBy = "studyGroup")
+    @OneToMany(mappedBy = "studyGroup", cascade = CascadeType.REMOVE)
     private List<Certification> certification;
 
-    @OneToMany(mappedBy = "postedStudyGroup")
+    @OneToMany(mappedBy = "postedStudyGroup", cascade = CascadeType.REMOVE, orphanRemoval=true)
     private List<Post> post;
 
-    @OneToMany(mappedBy = "participateStudyGroup")
+    @OneToMany(mappedBy = "participateStudyGroup", cascade = CascadeType.REMOVE, orphanRemoval=true)
     private List<Member> member;
 
     @Builder

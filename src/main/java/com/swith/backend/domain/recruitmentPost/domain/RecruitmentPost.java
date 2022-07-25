@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -43,10 +44,10 @@ public class RecruitmentPost extends BaseIdEntity {
     @Enumerated(EnumType.STRING)
     private RecruitmentPostCategory category;
 
-    @OneToMany(mappedBy = "recruitmentPost")
+    @OneToMany(mappedBy = "recruitmentPost", cascade = CascadeType.REMOVE)
     private List<Question> question;
 
-    @OneToMany(mappedBy = "recruitmentPostPhoto")
+    @OneToMany(mappedBy = "recruitmentPostPhoto", cascade = CascadeType.REMOVE)
     private List<Photo> Photo;
 
     @ManyToOne(fetch = FetchType.LAZY)
