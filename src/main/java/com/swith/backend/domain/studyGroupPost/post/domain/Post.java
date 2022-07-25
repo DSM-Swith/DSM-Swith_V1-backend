@@ -31,7 +31,7 @@ public class Post extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "study_group_id")
-    private StudyGroup studyGroupPost;
+    private StudyGroup PostedStudyGroup;
 
     @Builder
     public Post(String title, String content) {
