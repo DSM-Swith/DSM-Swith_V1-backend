@@ -50,12 +50,6 @@ public class RecruitmentPost extends BaseIdEntity {
     @OneToMany(mappedBy = "recruitmentPostRecruitmentPostPhoto")
     private List<RecruitmentPostPhoto> recruitmentPostPhoto;
 
-    @OneToMany(mappedBy = "recruitmentPostLikePost")
-    private List<LikePost> likePost;
-
-    @OneToMany(mappedBy = "applyPost")
-    private List<ApplyPost> applyPost;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User writer;
