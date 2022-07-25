@@ -37,7 +37,7 @@ public class StudyGroup extends BaseIdEntity {
     @OneToMany(mappedBy = "studyGroup")
     private List<Certification> certification;
 
-    @OneToMany(mappedBy = "PostedStudyGroup")
+    @OneToMany(mappedBy = "postedStudyGroup")
     private List<Post> post;
 
     @OneToMany(mappedBy = "participateStudyGroup")
