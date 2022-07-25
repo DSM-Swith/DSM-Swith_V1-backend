@@ -14,11 +14,14 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@IdClass(ApplyPostId.class)
 @Entity
 public class ApplyPost extends BaseIdEntity {
 
@@ -26,10 +29,12 @@ public class ApplyPost extends BaseIdEntity {
     @Enumerated(EnumType.STRING)
     private State state;
 
+    @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User applicant;
 
+    @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recruitment_post_id")
     private RecruitmentPost applyPost;
