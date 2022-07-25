@@ -53,7 +53,7 @@ public class RecruitmentPost extends BaseIdEntity {
     @OneToMany(mappedBy = "recruitmentPostLikePost")
     private List<LikePost> likePost;
 
-    @OneToMany(mappedBy = "recruitmentPostApplyPost")
+    @OneToMany(mappedBy = "applyPost")
     private List<ApplyPost> applyPost;
 
     @ManyToOne

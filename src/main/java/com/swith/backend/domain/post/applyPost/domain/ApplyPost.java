@@ -26,10 +26,10 @@ public class ApplyPost extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User userApplyPost;
+    private User applicant;
 
     @ManyToOne
     @JoinColumn(name = "recruitment_post_id")
-    private RecruitmentPost recruitmentPostApplyPost;
+    private RecruitmentPost applyPost;
 
 }
