@@ -44,7 +44,7 @@ public class RecruitmentPost extends BaseIdEntity {
     @Enumerated(EnumType.STRING)
     private RecruitmentPostCategory category;
 
-    @OneToMany(mappedBy = "recruitmentPostQuestion")
+    @OneToMany(mappedBy = "recruitmentPost")
     private List<Question> question;
 
     @OneToMany(mappedBy = "recruitmentPostRecruitmentPostPhoto")

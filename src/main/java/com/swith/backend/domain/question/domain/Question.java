@@ -27,6 +27,6 @@ public class Question extends BaseTimeEntity {
 
     @ManyToOne
     @JoinColumn(name = "recruitment_post_id")
-    private RecruitmentPost recruitmentPostQuestion;
+    private RecruitmentPost recruitmentPost;
 
 }
