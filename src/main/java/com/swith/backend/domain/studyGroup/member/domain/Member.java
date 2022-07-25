@@ -1,5 +1,6 @@
 package com.swith.backend.domain.studyGroup.member.domain;
 
+import com.swith.backend.domain.studyGroup.certification.domain.Certification;
 import com.swith.backend.domain.studyGroup.member.domain.types.Role;
 import com.swith.backend.domain.studyGroup.studyGroup.domain.StudyGroup;
 import com.swith.backend.domain.user.domain.User;
@@ -15,6 +16,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -27,6 +30,9 @@ public class Member extends BaseIdEntity {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
+    
+    @OneToMany(mappedBy = "member")
+    private List<Certification> certification;
 
     @ManyToOne
     @JoinColumn(name = "study_group_id")

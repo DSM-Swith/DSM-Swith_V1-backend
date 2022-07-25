@@ -1,5 +1,6 @@
 package com.swith.backend.domain.studyGroup.certification.domain;
 
+import com.swith.backend.domain.studyGroup.member.domain.Member;
 import com.swith.backend.domain.studyGroup.studyGroup.domain.StudyGroup;
 import com.swith.backend.global.entity.BaseTimeEntity;
 import lombok.AccessLevel;
@@ -22,4 +23,9 @@ public class Certification extends BaseTimeEntity {
     @ManyToOne
     @JoinColumn(name = "study_group_id")
     private StudyGroup studyGroupCertification;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
+
 }
