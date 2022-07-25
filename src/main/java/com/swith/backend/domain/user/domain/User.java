@@ -59,7 +59,7 @@ public class User extends BaseIdEntity {
     @OneToMany(mappedBy = "member")
     private List<Member> member;
 
-    @OneToMany(mappedBy = "userLikePost")
+    @OneToMany(mappedBy = "user")
     private List<LikePost> likePost;
 
     @OneToMany(mappedBy = "applicant")
