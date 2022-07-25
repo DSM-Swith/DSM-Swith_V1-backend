@@ -60,7 +60,7 @@ public class User extends BaseIdEntity {
     @OneToMany(mappedBy = "userRecruitmentPost")
     private List<RecruitmentPost> recruitmentPost;
 
-    @OneToMany(mappedBy = "userMember")
+    @OneToMany(mappedBy = "member")
     private List<Member> member;
 
     @OneToMany(mappedBy = "userLikePost")

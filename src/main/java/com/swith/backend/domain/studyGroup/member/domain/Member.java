@@ -34,7 +34,7 @@ public class Member extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User userMember;
+    private User member;
 
     @Builder
     public Member(Integer warning, Role role) {
