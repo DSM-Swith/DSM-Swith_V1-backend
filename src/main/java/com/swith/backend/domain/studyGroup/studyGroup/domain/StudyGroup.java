@@ -31,6 +31,9 @@ public class StudyGroup extends BaseIdEntity {
     @Column(nullable = false, columnDefinition = "tinyint")
     private Integer warningCount;
 
+    @Column(nullable = false)
+    private Boolean isAction;
+
     @OneToMany(mappedBy = "studyGroup")
     private List<Certification> certification;
 
@@ -46,5 +49,6 @@ public class StudyGroup extends BaseIdEntity {
         this.description = description;
         this.endDate = endDate;
         this.warningCount = warningCount;
+        this.isAction = false;
     }
 }
