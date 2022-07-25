@@ -1,7 +1,5 @@
 package com.swith.backend.domain.recruitmentPost.domain;
 
-import com.swith.backend.domain.post.applyPost.domain.ApplyPost;
-import com.swith.backend.domain.post.likePost.domain.LikePost;
 import com.swith.backend.domain.question.domain.Question;
 import com.swith.backend.domain.recruitmentPost.domain.types.RecruitmentPostCategory;
 import com.swith.backend.domain.user.domain.User;
