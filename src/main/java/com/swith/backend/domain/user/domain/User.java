@@ -37,7 +37,7 @@ public class User extends BaseIdEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Rank rank;
+    private Rank userRank;
 
     @Column(nullable = false, columnDefinition = "tinyint default 0")
     private Integer plusPoint;
@@ -69,7 +69,7 @@ public class User extends BaseIdEntity {
         this.accountId = accountId;
         this.password = password;
         this.introduce = introduce;
-        this.rank = rank;
+        this.userRank = rank;
         this.plusPoint = plusPoint;
         this.email = email;
         this.path = path;
