@@ -2,6 +2,7 @@ package com.swith.backend.domain.studyGroupPost.post.domain;
 
 import com.swith.backend.domain.studyGroup.studyGroup.domain.StudyGroup;
 import com.swith.backend.domain.studyGroupPost.comment.domain.Comment;
+import com.swith.backend.domain.user.domain.User;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -32,6 +33,10 @@ public class Post extends BaseIdEntity {
     @ManyToOne
     @JoinColumn(name = "study_group_id")
     private StudyGroup PostedStudyGroup;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Builder
     public Post(String title, String content) {

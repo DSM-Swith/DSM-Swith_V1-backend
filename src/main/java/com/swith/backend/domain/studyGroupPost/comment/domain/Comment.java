@@ -1,6 +1,7 @@
 package com.swith.backend.domain.studyGroupPost.comment.domain;
 
 import com.swith.backend.domain.studyGroupPost.post.domain.Post;
+import com.swith.backend.domain.user.domain.User;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -22,5 +23,9 @@ public class Comment extends BaseIdEntity {
     @ManyToOne
     @JoinColumn(name = "post_id")
     private Post post;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }
