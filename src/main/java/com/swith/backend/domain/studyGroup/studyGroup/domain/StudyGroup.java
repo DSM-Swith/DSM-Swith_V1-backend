@@ -40,7 +40,7 @@ public class StudyGroup extends BaseIdEntity {
     @OneToMany(mappedBy = "PostedStudyGroup")
     private List<Post> post;
 
-    @OneToMany(mappedBy = "ParticipateStudyGroup")
+    @OneToMany(mappedBy = "participateStudyGroup")
     private List<Member> member;
 
     @Builder
