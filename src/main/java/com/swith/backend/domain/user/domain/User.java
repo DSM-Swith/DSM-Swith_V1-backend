@@ -57,7 +57,7 @@ public class User extends BaseIdEntity {
     @OneToMany(mappedBy = "userAnswer")
     private List<Answer> answers;
 
-    @OneToMany(mappedBy = "userRecruitmentPost")
+    @OneToMany(mappedBy = "writer")
     private List<RecruitmentPost> recruitmentPost;
 
     @OneToMany(mappedBy = "member")

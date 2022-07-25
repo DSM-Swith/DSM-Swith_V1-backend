@@ -58,7 +58,7 @@ public class RecruitmentPost extends BaseIdEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User userRecruitmentPost;
+    private User writer;
 
 
     @Builder
