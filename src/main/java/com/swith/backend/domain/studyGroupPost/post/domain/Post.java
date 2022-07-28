@@ -29,9 +29,6 @@ public class Post extends BaseIdEntity {
     @Column(nullable = false, length = 2000)
     private String content;
 
-    @Column(nullable = false)
-    private Boolean isQuestion;
-
     @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE, orphanRemoval=true)
     private List<Comment> comment;
 
@@ -44,10 +41,9 @@ public class Post extends BaseIdEntity {
     private User user;
 
     @Builder
-    public Post(String title, String content, Boolean isQuestion, StudyGroup studyGroup, User user) {
+    public Post(String title, String content, StudyGroup studyGroup, User user) {
         this.title = title;
         this.content = content;
-        this.isQuestion = isQuestion;
         this.postedStudyGroup = studyGroup;
         this.user = user;
     }
