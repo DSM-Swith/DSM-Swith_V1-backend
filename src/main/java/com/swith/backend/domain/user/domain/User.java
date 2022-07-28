@@ -24,9 +24,6 @@ import java.util.List;
 @Entity
 public class User extends BaseIdEntity {
 
-    @Column(nullable = false, length = 20)
-    private String name;
-
     @Column(nullable = false, length = 10)
     private String accountId;
 
@@ -65,8 +62,7 @@ public class User extends BaseIdEntity {
     private List<ApplyPost> applyPost;
 
     @Builder
-    public User(String name, String accountId, String password, String introduce, Rank rank, Integer plusPoint, String email, String path, Boolean isApply) {
-        this.name = name;
+    public User(String accountId, String password, String introduce, Rank rank, Integer plusPoint, String email, String path, Boolean isApply) {
         this.accountId = accountId;
         this.password = password;
         this.introduce = introduce;
