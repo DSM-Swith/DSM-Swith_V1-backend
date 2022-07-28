@@ -32,6 +32,9 @@ public class StudyGroup extends BaseIdEntity {
     @Column(nullable = false, columnDefinition = "tinyint")
     private Integer warningCount;
 
+    @Column(nullable = false, columnDefinition = "tinyint")
+    private Integer certificationCount;
+
     @Column(nullable = false)
     private Boolean isAction;
 
@@ -45,11 +48,12 @@ public class StudyGroup extends BaseIdEntity {
     private List<Member> member;
 
     @Builder
-    public StudyGroup(String groupName, String description, LocalDate endDate, Integer warningCount) {
+    public StudyGroup(String groupName, String description, LocalDate endDate, Integer warningCount, Integer certificationCount) {
         this.groupName = groupName;
         this.description = description;
         this.endDate = endDate;
         this.warningCount = warningCount;
+        this.certificationCount = certificationCount;
         this.isAction = false;
     }
 }
