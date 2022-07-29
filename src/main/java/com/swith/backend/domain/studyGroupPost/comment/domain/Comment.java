@@ -1,5 +1,6 @@
 package com.swith.backend.domain.studyGroupPost.comment.domain;
 
+import com.swith.backend.domain.studyGroup.member.domain.Member;
 import com.swith.backend.domain.studyGroupPost.post.domain.Post;
 import com.swith.backend.domain.user.domain.User;
 import com.swith.backend.global.entity.BaseIdEntity;
@@ -27,14 +28,14 @@ public class Comment extends BaseIdEntity {
     private Post post;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @Builder
-    public Comment(String content, Post post, User user) {
+    public Comment(String content, Post post, Member member) {
         this.content = content;
         this.post = post;
-        this.user = user;
+        this.member = member;
     }
 
 }

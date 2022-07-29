@@ -1,5 +1,6 @@
 package com.swith.backend.domain.studyGroupPost.post.domain;
 
+import com.swith.backend.domain.studyGroup.member.domain.Member;
 import com.swith.backend.domain.studyGroup.studyGroup.domain.StudyGroup;
 import com.swith.backend.domain.studyGroupPost.comment.domain.Comment;
 import com.swith.backend.domain.user.domain.User;
@@ -37,14 +38,14 @@ public class Post extends BaseIdEntity {
     private StudyGroup postedStudyGroup;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @Builder
-    public Post(String title, String content, StudyGroup studyGroup, User user) {
+    public Post(String title, String content, StudyGroup studyGroup, Member member) {
         this.title = title;
         this.content = content;
         this.postedStudyGroup = studyGroup;
-        this.user = user;
+        this.member = member;
     }
 }
