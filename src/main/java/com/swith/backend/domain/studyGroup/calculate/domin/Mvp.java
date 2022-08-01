@@ -1,15 +1,13 @@
-package com.swith.backend.domain.studyGroupPost.comment.domain;
+package com.swith.backend.domain.studyGroup.calculate.domin;
 
 import com.swith.backend.domain.studyGroup.member.domain.Member;
-import com.swith.backend.domain.studyGroupPost.post.domain.Post;
-import com.swith.backend.domain.user.domain.User;
+import com.swith.backend.domain.studyGroup.studyGroup.domain.StudyGroup;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -18,24 +16,20 @@ import javax.persistence.ManyToOne;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class Comment extends BaseIdEntity {
-
-    @Column(nullable = false, length = 200)
-    private String content;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "post_id")
-    private Post post;
+public class Mvp extends BaseIdEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "studyGroup_id")
+    private StudyGroup studyGroup;
+
     @Builder
-    public Comment(String content, Post post, Member member) {
-        this.content = content;
-        this.post = post;
+    public Mvp(Member member, StudyGroup studyGroup) {
         this.member = member;
+        this.studyGroup = studyGroup;
     }
 
 }
