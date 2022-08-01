@@ -1,5 +1,7 @@
 package com.swith.backend.domain.studyGroup.studyGroup.domain;
 
+import com.swith.backend.domain.studyGroup.calculate.domin.CertificationCount;
+import com.swith.backend.domain.studyGroup.calculate.domin.Mvp;
 import com.swith.backend.domain.studyGroup.certification.domain.Certification;
 import com.swith.backend.domain.studyGroup.member.domain.Member;
 import com.swith.backend.domain.studyGroupPost.post.domain.Post;
@@ -46,6 +48,12 @@ public class StudyGroup extends BaseIdEntity {
 
     @OneToMany(mappedBy = "participateStudyGroup", cascade = CascadeType.REMOVE, orphanRemoval=true)
     private List<Member> member;
+
+    @OneToMany(mappedBy = "studyGroup", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CertificationCount> certificationCount;
+
+    @OneToMany(mappedBy = "studyGroup", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Mvp> mvp;
 
     @Builder
     public StudyGroup(String groupName, String description, LocalDate endDate, Integer warningCount, Integer certificationMinCount) {

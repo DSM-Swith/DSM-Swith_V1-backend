@@ -1,6 +1,7 @@
 package com.swith.backend.domain.studyGroup.calculate.domin;
 
 import com.swith.backend.domain.studyGroup.member.domain.Member;
+import com.swith.backend.domain.studyGroup.studyGroup.domain.StudyGroup;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -21,9 +22,14 @@ public class Mvp extends BaseIdEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "studyGroup_id")
+    private StudyGroup studyGroup;
+
     @Builder
-    public Mvp(Member member) {
+    public Mvp(Member member, StudyGroup studyGroup) {
         this.member = member;
+        this.studyGroup = studyGroup;
     }
 
 }

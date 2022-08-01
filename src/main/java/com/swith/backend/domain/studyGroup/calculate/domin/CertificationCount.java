@@ -1,6 +1,7 @@
 package com.swith.backend.domain.studyGroup.calculate.domin;
 
 import com.swith.backend.domain.studyGroup.member.domain.Member;
+import com.swith.backend.domain.studyGroup.studyGroup.domain.StudyGroup;
 import com.swith.backend.global.entity.BaseIdEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -25,10 +26,15 @@ public class CertificationCount extends BaseIdEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "studyGroup_id")
+    private StudyGroup studyGroup;
+
     @Builder
-    public CertificationCount(Integer certificationCount, Member member) {
+    public CertificationCount(Integer certificationCount, Member member, StudyGroup studyGroup) {
         this.certificationCount = certificationCount;
         this.member = member;
+        this.studyGroup = studyGroup;
     }
 
 }
