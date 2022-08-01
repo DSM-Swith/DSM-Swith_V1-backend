@@ -21,14 +21,9 @@ public class Mvp extends BaseIdEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "calculate_id")
-    private Calculate calculate;
-
     @Builder
-    public Mvp(Member member, Calculate calculate) {
+    public Mvp(Member member) {
         this.member = member;
-        this.calculate = calculate;
     }
 
 }

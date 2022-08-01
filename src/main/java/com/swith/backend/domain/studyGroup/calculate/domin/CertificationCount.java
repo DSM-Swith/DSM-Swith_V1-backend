@@ -25,15 +25,10 @@ public class CertificationCount extends BaseIdEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "calculate_id")
-    private Calculate calculate;
-
     @Builder
-    public CertificationCount(Integer certificationCount, Member member, Calculate calculate) {
+    public CertificationCount(Integer certificationCount, Member member) {
         this.certificationCount = certificationCount;
         this.member = member;
-        this.calculate = calculate;
     }
 
 }
